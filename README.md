@@ -65,6 +65,3 @@ A aplicação consiste em uma rede social voltada para o público gamer, projeta
     </td>
 
 
-https://www.linkedin.com/in/bernardo-mesquita-1277a8249/
-https://www.linkedin.com/in/luis-henrique-severo-da-silva-133176225/
-
