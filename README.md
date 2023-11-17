@@ -36,7 +36,7 @@ A aplicação consiste em uma rede social voltada para o público gamer, projeta
 <table>
 <tr>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/arthuurfagundes>
+        <a href=https://github.com/arthurfagundes>
             <img src=https://avatars.githubusercontent.com/u/64553764?v=4 width="100;"  alt=Arthur Fagundes/>
             <br />
             <sub style="font-size:14px; text-decoration: none"><b>Arthur Fagundes</b></sub>
