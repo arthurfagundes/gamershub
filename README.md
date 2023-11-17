@@ -26,9 +26,49 @@ A aplicação consiste em uma rede social voltada para o público gamer, projeta
 
 ![esboco_cadastro](https://github.com/arthurfagundes/gamershub/assets/64553764/35efa5d2-140a-4c44-869d-0909084637c3)
 
+## Esboço Para Você
+
+![esboco_fy](https://github.com/arthurfagundes/gamershub/assets/64553764/c1007e63-9035-45ff-a9ec-b1d79e2b3284)
+
+## Esboço Amigos
+
+![esboco_amigos](https://github.com/arthurfagundes/gamershub/assets/64553764/fc192a9b-24e1-46ac-98a8-9fe9ddb313d1)
+
+## Esboço Menu
+
+![esboco_menu](https://github.com/arthurfagundes/gamershub/assets/64553764/0ed3015d-d63f-4562-867d-326160a0a36e)
+
+## Esboço Mais
+
+![esboco_mais](https://github.com/arthurfagundes/gamershub/assets/64553764/2422642f-7e94-4f39-a44b-305107f19991)
+
+## Esboço Perfil
+
+![esboco_perfil](https://github.com/arthurfagundes/gamershub/assets/64553764/7e30ba7d-46c2-4156-b783-b0a15f71d44b)
+
+## Esboço Editar Perfil
+
+![esboco_editperf](https://github.com/arthurfagundes/gamershub/assets/64553764/909f64dd-b02f-4ba9-b4ef-68d2b4ddf1c7)
+
+## Esboço Meus Jogos
+
+![esboco_meusjogos](https://github.com/arthurfagundes/gamershub/assets/64553764/1272a59a-9a86-4f54-b718-29c419e2013f)
+
+## Esboço Curtidas
+
+![esboco_likes](https://github.com/arthurfagundes/gamershub/assets/64553764/810aae31-3525-4cc6-8042-e4861197f411)
+
 ## Modelo entidade relacionamento
 ![Diagrama do DataBase](https://github.com/arthurfagundes/gamershub/assets/64553764/c13c7376-127c-46ce-b2f6-91a3674b94a4)
 
+# 🖱️ Tecnologias Utilizadas
+- PHP
+- HTML
+- CSS
+- XAMPP
+- phpMyAdmin
+- Canva
+- MySQL Workbench
 
 # ✏️ Autores
 
