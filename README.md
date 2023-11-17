@@ -36,35 +36,32 @@ A aplicação consiste em uma rede social voltada para o público gamer, projeta
 <table>
 <tr>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
-        <a href=https://github.com/arthuurfagundes>
+        <a href=https://github.com/arthurfagundes>
             <img src=https://avatars.githubusercontent.com/u/64553764?v=4 width="100;"  alt=Arthur Fagundes/>
             <br />
-            <sub style="font-size:14px"><b>Arthur Fagundes</b></sub>
+            <sub style="font-size:14px; text-decoration: none"><b>Arthur Fagundes</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/BeeMesquitaa>
             <img src=https://avatars.githubusercontent.com/u/121141327?v=4 width="100;"  alt=Bernardo Mesquita/>
             <br />
-            <sub style="font-size:14px"><b>Bernardo Mesquita</b></sub>
+            <sub style="font-size:14px; text-decoration: none"><b>Bernardo Mesquita</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/joaopacheco200>
             <img src=https://avatars.githubusercontent.com/u/83031001?v=4 width="100;"  alt=João Pacheco/>
             <br />
-            <sub style="font-size:14px"><b>João Pacheco</b></sub>
+            <sub style="font-size:14px; text-decoration: none"><b>João Pacheco</b></sub>
         </a>
     </td>
     <td align="center" style="word-wrap: break-word; width: 150.0; height: 150.0">
         <a href=https://github.com/LuisiTxrror>
             <img src=https://avatars.githubusercontent.com/u/127360853?v=4 width="100;"  alt=Luis Henrique />
             <br />
-            <sub style="font-size:14px"><b>Luis Henrique</b></sub>
+            <sub style="font-size:14px; text-decoration: none"><b>Luis Henrique</b></sub>
         </a>
     </td>
 
-
-https://www.linkedin.com/in/bernardo-mesquita-1277a8249/
-https://www.linkedin.com/in/luis-henrique-severo-da-silva-133176225/
 
