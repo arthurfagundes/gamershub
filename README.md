@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://discord.gg/he4rt">
+  <a>
     <img src="./img/logo.png" height="220">
   </a>
 </p>
