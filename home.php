@@ -40,8 +40,8 @@
             z-index: 1000;
             display: flex;
             align-items: center;
-            justify-content: center; /* Centraliza a imagem no header */
-            top: 40px; /* Adiciona espaço para o top-menu */
+            justify-content: center;
+            top: 40px; 
         }
 
         img {

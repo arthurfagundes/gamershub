@@ -15,6 +15,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $comfirme_senha = $_POST["comfirme_senha"];
 
     $crudUsuario->registrar($nome, $email, $datanasc, $senha, $comfirme_senha);
+    echo("Registrado com sucesso");
+    header("Refresh: 3; login.php");
+} else {
+    echo("Dados errados, tente novamente");
 }
 ?>
 
@@ -47,3 +51,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
 </body>
 </html>
+

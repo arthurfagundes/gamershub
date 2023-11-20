@@ -27,17 +27,16 @@
         }
     }
     
-    public function logar($nome, $senha)
-    {
+    public function logar($email, $senha) {
         try {
-            $stmt = $this->conn->prepare("SELECT * FROM " . $this->table_name . " WHERE nome = :nome");
-            $stmt->bindParam(':nome', $nome);
+            $stmt = $this->conn->prepare("SELECT * FROM " . $this->table_name . " WHERE email = :email");
+            $stmt->bindParam(':email', $email);
             $stmt->execute();
-            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+            $crudUsuario = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if ($user && password_verify($senha, $user['senha'])) {
+            if ($crudUsuario && password_verify($senha, $crudUsuario['senha'])) {
                 session_start();
-                $_SESSION['nome'] = $user['nome'];
+                $_SESSION['email'] = $crudUsuario['email'];
                 return true;
             } else {
                 return false;
