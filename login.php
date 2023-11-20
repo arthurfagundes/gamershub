@@ -20,11 +20,11 @@
 
 <?php
 session_start();
-include 'config.php';
-include 'user.php';
+include './config/config.php';
+include './class/CrudUsuario.php';
 
 
-$user = new User($conn);
+$user = new CrudUsuario($conn);
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $senha = $_POST['senha'];
 
 
-    if ($user->login($email, $senha)) {
+    if ($user->logar($email, $senha)) {
         header("Location: dashboard.php");
         exit();
     } else {
