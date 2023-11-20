@@ -1,41 +1,47 @@
-<?php
-include 'config.php';
-include 'user.php';
+<<?php
+include_once "./class/DataBase.php";
+include_once "./class/CrudUsuario.php";
 
-$user = new User($conn);
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $database = new DataBase();
+    $db = $database->getConnection();
+    $crudUsuario = new CrudUsuario($db);
 
-if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
-    $email = $_POST['email'];
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
+    $datanasc = $_POST["datanasc"];
+    $senha = $_POST["senha"];
+    $comfirme_senha = $_POST["comfirme_senha"];
 
-    $user->register($username, $password, $confirm_password, $email);
-    header("refresh:1;url=login.php");
+    $crudUsuario->registrar($nome, $email, $datanasc, $senha, $comfirme_senha);
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registre-se</title>
+    <title>Registro de Usuário</title>
 </head>
 <body>
-    <h2>Registre-se</h2>
-    <form action="" method="post">
-        <label for="username">Usuário:</label>
-        <input type="text" name="username" required><br>
+    <h2>Registro de Usuário</h2>
+    <form method="post" action="">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" required><br>
 
-        <label for="password">Senha:</label>
-        <input type="text" name="password" required><br>
+        <label for="email">Email:</label>
+        <input type="email" name="email" required><br>
 
-        <label for="confirm_password">Confirme sua senha:</label>
-        <input type="text" name="confirm_password" required><br>
+        <label for="datanasc">Data de Nascimento:</label>
+        <input type="date" name="datanasc" required><br>
 
-        <label for="email">E-mail:</label>
-        <input type="text" name="email" required><br>
+        <label for="senha">Senha:</label>
+        <input type="password" name="senha" required><br>
+
+        <label for="comfirme_senha">Confirme a Senha:</label>
+        <input type="password" name="comfirme_senha" required><br>
 
         <input type="submit" value="Registrar">
     </form>

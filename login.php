@@ -20,8 +20,8 @@
 
 <?php
 session_start();
-include 'confg.php';
-include 'User.php';
+include 'config.php';
+include 'user.php';
 
 
 $user = new User($conn);
