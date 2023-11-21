@@ -41,18 +41,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <p>Logue na sua conta</p>
             </div>
             <div class="Logar">
-                <form class="LogarForm" action="" method="post">
-                <div class="meio">
+                <form action="" method="post">
                     <img id="logo" src="../img/logo_semfundo.png" alt="">
                     <input type="email" name="email" placeholder="Digite o email">
                     <input type="password" name="senha" placeholder="Senha:">
-                    </div>
-                    <div class="botoes">
-                    <input type="submit" value="Entrar">
-                    <input type="button" value="Registrar" onclick="window.location.href='register.php';">
-                </div>
+                    <button type="submit">Logar</button>
+                    <button type="button" onclick="window.location.href='register.php';">Registrar</button>
                 </form>
+                <hr class="divisoria">
             </div>
+        </main>
     </div>
 </body>
 </html>

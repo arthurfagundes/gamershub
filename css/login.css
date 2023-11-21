@@ -1,11 +1,11 @@
-/* Estilos para a página toda */
+/* Estilos para a página de login */
+
 body {
   margin: 0;
   background-color: #555;
   font-family: 'Roboto', sans-serif;
 }
 
-/* Estilos para o meio */
 .meio {
   background-color: #555;
   display: flex;
@@ -16,28 +16,26 @@ body {
   margin: 10px 470px 10px 470px;
 }
 
-/* Estilos para o formulário de login */
-.LogarForm {
+.Titulo {
+  text-align: center;
+}
+
+.Titulo p {
+  color: #fff;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.Logar {
   text-align: center;
   background-color: #555;
   padding: 20px;
   border-radius: 10px;
+  margin-top: 20px; /* Adicionei margem superior para separar do cabeçalho */
 }
 
-.LogarForm label {
-  display: block;
-  color: #fff;
-  font-size: 16px;
-}
-
-.LogarForm input[type="email"]::placeholder,
-.LogarForm input[type="password"]::placeholder {
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
-}
-
-.LogarForm input[type="email"],
-.LogarForm input[type="password"] {
+.Logar input[type="email"],
+.Logar input[type="password"] {
   width: 250px;
   padding: 10px;
   margin: 5px;
@@ -47,36 +45,40 @@ body {
   color: #fff;
 }
 
-.LogarForm .botoes {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.LogarForm input[type="submit"],
-.LogarForm input[type="button"] {
-  flex: 48%;
+.Logar button {
+  width: 30%;
   padding: 10px;
+  margin-top: 10px;
   border: 1px solid #fff;
   border-radius: 15px;
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
 }
 
-.LogarForm input[type="submit"]:hover,
-.LogarForm input[type="button"]:hover {
+.Logar button:hover {
   background-color: transparent;
   color: #fff;
 }
 
-/* Regras de mídia queries para ajustar o layout em telas menores */
-@media screen and (max-width: 768px) {
-  .meio {
-      margin: 20px 10px;
-  }
+.Logar a {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+}
 
-  .LogarForm input[type="submit"],
-  .LogarForm input[type="button"] {
-      width: 100%;
-  }
+.Logar a:hover {
+  background-color: #0056b3;
+}
+
+.Logar hr {
+  border: 1px solid #ffbd59;
+  margin: 20px 0;
 }
