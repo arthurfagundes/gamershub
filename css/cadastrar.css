@@ -1,0 +1,174 @@
+/* Estilos para a pagina toda */
+body {
+    margin: 0;
+    background-color: #555;
+    font-family: 'Roboto', sans-serif;
+}
+/* Estilos para o cabeçalho */
+.Cabecalho {
+    background-color: #f0f0f0;
+    /* Cor de fundo do cabeçalho */
+    color: #00129e;
+    /* Cor do texto no cabeçalho */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin: 0;
+}
+
+/* Estilos para o título no cabeçalho */
+.TitleHeader h1 {
+    font-size: 50px;
+    /* Tamanho da fonte do título */
+}
+
+/* Estilos para o meio */
+.meio {
+    background-color: #555;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Corrigi de 'align-content' para 'align-items' */
+    justify-content: center;
+    /* Adicionei isso para centralizar conteúdo verticalmente */
+    padding: 20px;
+    /* Adicionei um preenchimento interno para afastar o conteúdo das bordas */
+    margin: 10px 470px 10px 470px;
+}
+
+/* Estilos para a classe "Titulo" dentro da seção "main" */
+.Titulo {
+    text-align: center;
+}
+
+.Titulo p {
+    color: #fff;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.Titulo h3 {
+    color: #fff;
+    font-size: 24px;
+}
+
+/* Estilos para a classe "Logar" dentro da seção "main" */
+.Logar {
+    text-align: center;
+    background-color: #555;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.Logar label {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+}
+
+.Logar input[type="text"]::placeholder,
+.Logar input[type="date"]::placeholder,
+.Logar input[type="password"]::placeholder {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    /* Define a cor do texto do placeholder como branca */
+}
+
+.Logar input[type="text"],
+.Logar input[type="date"],
+.Logar input[type="password"] {
+    width: 250px;
+    padding: 10px;
+    margin: 5px;
+    /* Espaçamento superior para separar os campos de entrada */
+    border: 1px solid #fff;
+    /* Adicione a cor da borda branca */
+    border-radius: 15px;
+    background-color: transparent;
+    /* Torne o fundo transparente */
+    color: #fff;
+}
+
+.Logar button {
+    width: 30%;
+    padding: 10px;
+    margin-top: 10px;
+    /* Espaçamento superior para separar o botão dos campos de entrada */
+    border: 1px solid #fff;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: 'Roboto', sans-serif;
+}
+
+.Logar button:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+/* Estilos para o botão "Cadastrar" dentro da classe "Logar" */
+.Logar a {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.Logar a:hover {
+    background-color: #0056b3;
+}
+
+.Logar hr {
+    border: 1px solid #ffbd59;
+    margin: 20px 0;
+}
+
+/* Estilos para o rodapé */
+.rodape {
+    background-color: #333;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Estilos para os icones de "Redes" no rodapé */
+.Redes i {
+    font-size: 24px;
+    /* Tamanho do ícone */
+    margin-right: 10px;
+    /* Espaçamento entre os ícones */
+}
+
+/* Estilos para o link "Feito por Dev" na div "Git" */
+.Git a {
+    text-decoration: none;
+    color: #00129e;
+    font-weight: bold;
+    /* Deixa o texto em negrito */
+}
+
+/* Regras de mídia queries para ajustar o layout em telas menores */
+@media screen and (max-width: 768px) {
+    .Cabecalho {
+        flex-direction: column;
+    }
+
+    .TitleHeader h1 {
+        font-size: 24px;
+    }
+
+    .meio {
+        margin: 20px 10px;
+        /* Ajuste a margem para se adaptar melhor a telas menores */
+    }
+}

@@ -84,7 +84,7 @@
 
 <body>
     <div id="top-menu">
-        <a href="#">Perfil</a>
+        <a href="./perfil.php">Perfil</a>
         <a href="#">Mais</a>
         <a href="#">Configurações</a>
     </div>
