@@ -70,50 +70,55 @@
         }
     }
     
-    public function editarPerfil($id, $nome, $imgperfil, $bio)
-    {
-        try {
-            // Verifica se o usuário com o ID especificado existe
-            $verifica_query = "SELECT * FROM " . $this->table_name . " WHERE id = ?";
-            $verifica_stmt = $this->conn->prepare($verifica_query);
-            $verifica_stmt->execute([$id]);
-    
-            if ($verifica_stmt->rowCount() > 0) {
-                // Usuário encontrado, proceder com a edição
-    
-                $update_fields = [];
-                $update_values = [];
-    
-                if (!empty($nome)) {
-                    $update_fields[] = "nome = ?";
-                    $update_values[] = $nome;
-                }
-    
-                if (!empty($bio)) {
-                    $update_fields[] = "bio = ?";
-                    $update_values[] = $bio;
-                }
-    
-                if (!empty($imgperfil)) {
-                    $update_fields[] = "imgperfil = ?";
-                    $update_values[] = $imgperfil;
-                }
-    
-                $update_fields_str = implode(", ", $update_fields);
-                $query = "UPDATE " . $this->table_name . " SET " . $update_fields_str . " WHERE id = ?";
-                $stmt = $this->conn->prepare($query);
-    
-                $update_values[] = $id;
-    
-                $stmt->execute($update_values);
-    
-                return true; // Edição bem-sucedida
-            } else {
-                return false; // Usuário não encontrado
+    public function editarPerfil($id, $nome, $imgperfil, $bio, $background_img)
+{
+    try {
+        // Verifica se o usuário com o ID especificado existe
+        $verifica_query = "SELECT * FROM " . $this->table_name . " WHERE id = ?";
+        $verifica_stmt = $this->conn->prepare($verifica_query);
+        $verifica_stmt->execute([$id]);
+
+        if ($verifica_stmt->rowCount() > 0) {
+            // Usuário encontrado, proceder com a edição
+
+            $update_fields = [];
+            $update_values = [];
+
+            if (!empty($nome)) {
+                $update_fields[] = "nome = ?";
+                $update_values[] = $nome;
             }
-        } catch (PDOException $e) {
-            echo "Erro na edição do perfil: " . $e->getMessage();
+
+            if (!empty($bio)) {
+                $update_fields[] = "bio = ?";
+                $update_values[] = $bio;
+            }
+
+            if (!empty($imgperfil)) {
+                $update_fields[] = "imgperfil = ?";
+                $update_values[] = $imgperfil;
+            }
+
+            if (!empty($background_img)) {
+                $update_fields[] = "background_img = ?";
+                $update_values[] = $background_img;
+            }
+
+            $update_fields_str = implode(", ", $update_fields);
+            $query = "UPDATE " . $this->table_name . " SET " . $update_fields_str . " WHERE id = ?";
+            $stmt = $this->conn->prepare($query);
+
+            $update_values[] = $id;
+
+            $stmt->execute($update_values);
+
+            return true; // Edição bem-sucedida
+        } else {
+            return false; // Usuário não encontrado
         }
+    } catch (PDOException $e) {
+        echo "Erro na edição do perfil: " . $e->getMessage();
+    }
     }
 
     public function deletar($id)

@@ -33,14 +33,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (move_uploaded_file($imgperfil_tmp, $imgperfil_destino)) {
             // Atualiza o campo imgperfil no banco de dados com o caminho da imagem
             $imgperfil = 'img/' . $imgperfil_nome;
-            $editarSucesso = $crudUsuario->editarPerfil($idUsuarioLogado, $nome, $imgperfil, $bio);
+            $editarSucesso = $crudUsuario->editarPerfil($idUsuarioLogado, $nome, $imgperfil, $bio, $usuario['background_img']);
         } else {
             echo "Erro ao fazer o upload da imagem.";
             exit();
         }
     } else {
         // Se nenhum arquivo foi enviado, continua com a edição sem alterar a imagem
-        $editarSucesso = $crudUsuario->editarPerfil($idUsuarioLogado, $nome, $usuario['imgperfil'], $bio);
+        $editarSucesso = $crudUsuario->editarPerfil($idUsuarioLogado, $nome, $usuario['imgperfil'], $bio, $usuario['background_img']);
+    }
+
+    // Verifica se um arquivo de imagem de background foi enviado
+    if (!empty($_FILES['background_img']['name'])) {
+        $background_img_tmp = $_FILES['background_img']['tmp_name'];
+        $background_img_nome = basename($_FILES['background_img']['name']);
+        $background_img_destino = './img/' . $background_img_nome;
+
+        // Move o arquivo temporário para o diretório de destino
+        if (move_uploaded_file($background_img_tmp, $background_img_destino)) {
+            // Atualiza o campo background_img no banco de dados com o caminho da imagem
+            $background_img = 'img/' . $background_img_nome;
+            $editarSucesso = $crudUsuario->editarPerfil($idUsuarioLogado, $nome, $imgperfil, $bio, $background_img);
+        } else {
+            echo "Erro ao fazer o upload da imagem de background.";
+            exit();
+        }
+    } else {
+        // Se nenhum arquivo foi enviado, continua com a edição sem alterar a imagem de background
+        $editarSucesso = $crudUsuario->editarPerfil($idUsuarioLogado, $nome, $usuario['imgperfil'], $bio, $usuario['background_img']);
     }
 
     if ($editarSucesso) {
@@ -50,7 +70,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Erro ao editar o perfil.";
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +88,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             align-items: center;
             justify-content: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            background-color: #f0f0f0 url('<?php echo $usuario['background_img']; ?>') center/cover;
+            /* Adiciona a imagem de background escolhida pelo usuário */
         }
 
         h1 {
@@ -126,6 +146,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <label for="imgperfil">Imagem de Perfil:</label>
         <input type="file" name="imgperfil">
+
+        <label for="background_img">Imagem de Fundo:</label>
+        <input type="file" name="background_img">
 
         <label for="bio">Biografia:</label>
         <textarea name="bio"><?php echo $usuario['bio']; ?></textarea>
