@@ -224,7 +224,7 @@
         <img class="logo" src="./img/logo_semfundo.png" height="80">
         <ul>
             <li><a href="./perfil.php">Perfil</a></li>
-            <li><a href="#">Amigos</a></li>
+            <li><a href="./jogos.php">Jogos</a></li>
             <li><a href="./login.php">Login</a></li>
         </ul>
     </nav>

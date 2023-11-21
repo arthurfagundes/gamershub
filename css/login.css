@@ -31,7 +31,7 @@ body {
   background-color: #555;
   padding: 20px;
   border-radius: 10px;
-  margin-top: 20px; /* Adicionei margem superior para separar do cabeçalho */
+  margin-top: 20px; 
 }
 
 .Logar input[type="email"],

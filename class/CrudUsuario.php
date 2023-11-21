@@ -127,4 +127,23 @@
             echo "Erro na exclusão: " . $e->getMessage();
         }
     }
+
+    public function verificarAdmin($id)
+    {
+    try {
+        $query = "SELECT admin FROM " . $this->table_name . " WHERE id = ?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute([$id]);
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($result && $result['admin'] == 1) {
+            return true; // Usuário é administrador
+        } else {
+            return false; // Usuário não é administrador
+        }
+    } catch (PDOException $e) {
+        echo "Erro ao verificar status de admin: " . $e->getMessage();
+    }
+    }
 }
