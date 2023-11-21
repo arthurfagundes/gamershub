@@ -1,0 +1,82 @@
+/* Estilos para a página toda */
+body {
+  margin: 0;
+  background-color: #555;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Estilos para o meio */
+.meio {
+  background-color: #555;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 10px 470px 10px 470px;
+}
+
+/* Estilos para o formulário de login */
+.LogarForm {
+  text-align: center;
+  background-color: #555;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.LogarForm label {
+  display: block;
+  color: #fff;
+  font-size: 16px;
+}
+
+.LogarForm input[type="email"]::placeholder,
+.LogarForm input[type="password"]::placeholder {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.LogarForm input[type="email"],
+.LogarForm input[type="password"] {
+  width: 250px;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  background-color: transparent;
+  color: #fff;
+}
+
+.LogarForm .botoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.LogarForm input[type="submit"],
+.LogarForm input[type="button"] {
+  flex: 48%;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}
+
+.LogarForm input[type="submit"]:hover,
+.LogarForm input[type="button"]:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+/* Regras de mídia queries para ajustar o layout em telas menores */
+@media screen and (max-width: 768px) {
+  .meio {
+      margin: 20px 10px;
+  }
+
+  .LogarForm input[type="submit"],
+  .LogarForm input[type="button"] {
+      width: 100%;
+  }
+}
