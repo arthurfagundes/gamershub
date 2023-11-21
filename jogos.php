@@ -15,45 +15,8 @@ $crudJogos = new CrudJogos($db);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="seu_estilo.css">
     <title>Galeria de Jogos</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .container {
-            text-align: center;
-            padding: 20px;
-        }
-
-        
-
-        .galeria {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .jogo {
-            width: 300px;
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            text-align: center;
-        }
-
-        .jogo img {
-        max-width: 100%;
-        height: auto;
-        max-height: 200px; /* Defina a altura máxima desejada */
-        }
-
-        button {
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="../gamershub/css/jogos.css">
+    
 </head>
 <body>
     <div class="container">
