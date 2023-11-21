@@ -57,7 +57,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="adicionar_jogo.css">
+    <link rel="stylesheet" type="text/css" href="./css/adicionar_jogo.css">
     <title>Adicionar Jogo</title>
 
 </head>
