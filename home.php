@@ -1,3 +1,24 @@
+<?php
+
+session_start();
+include './config/config.php';
+include './class/CrudUsuario.php';
+include './class/CrudPost.php';
+
+$crudUsuario = new CrudUsuario($db);
+$CrudPost = new CrudPost($db);
+
+// Verifica se o usuário está logado
+if (!isset($_SESSION['id'])) {
+    header("Location: login.php");
+    exit();
+}
+
+// Obtém o ID do usuário logado diretamente da sessão
+$idUsuarioLogado = $_SESSION['id'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,29 +43,53 @@
         <ul>
             <li><a href="./perfil.php">Perfil</a></li>
             <li><a href="./jogos.php">Jogos</a></li>
-            <li><a href="./login.php">Login</a></li>
+            <li><a href="./login.php" onclick="$CrudUsuario.sair()">Sair</a></li>
         </ul>
     </nav>
 
     <section>
         <div class="publicar">
-            <textarea name="novidade" id="novidade" cols="30" rows="5" placeholder=" O que você está jogando?..."></textarea>
-            <button type="submit">Publicar</button>
-        </div>
+            <?php
+            $usuarioLogado = $crudUsuario->buscarPorId($idUsuarioLogado);
 
-        <div class="post">
-            <div class="profile-info">
-                <img class="profile-image" src='./img/ealogo.png' alt="Imagem do Perfil">
-                <div>
-                    <div class="profile-name">EA Sports</div>
-                    <div class="handle">@easports</div>
-                </div>
-            </div>
-            <div class="post-content">
-                <p>Acompanhe nossos lançamentos através do site.</p>
-                <img class="postage-image" src='./img/postagem-ea.png' alt="Imagem de Postagem">
-            </div>
+            echo '<img class="profile-image" src="' . $usuarioLogado['imgperfil'] . '" alt="Imagem do Perfil">';
+            echo '<div>';
+            echo '<div class="profile-name">' . $usuarioLogado['nome'] . '</div>';
+
+            echo '</div>';
+            ?>
+            <textarea name="novidade" id="novidade" cols="30" rows="5" placeholder=" O que você está jogando?..."></textarea>
+            <button type="submit" onclick="publicarPostagem()">Publicar</button>
         </div>
+    </section>
+
+    <section class="postagens">
+        <h2>Postagens</h2>
+
+        <ul class="postagens-list">
+            <?php
+            // Obtém todas as postagens da tabela
+            $postagens = $CrudPost->listarPostagens();
+
+            foreach ($postagens as $postagem) {
+                // Obtém os dados do usuário que fez a postagem
+                $usuario = $crudUsuario->buscarPorId($postagem['usuario_id']);
+
+                echo '<li class="postagem">';
+                echo '<div class="profile-info">';
+                echo '<img class="profile-image" src="' . $usuario['imgperfil'] . '" alt="Imagem do Perfil">';
+                echo '<div>';
+                echo '<div class="profile-name">' . $usuario['nome'] . '</div>';
+                echo '</div>';
+                echo '</div>';
+                echo '<div class="post-content">';
+                echo '<p>' . $postagem['texto'] . '</p>';
+                echo '<img class="postage-image" src="' . $postagem['imagem'] . '" alt="Imagem de Postagem">';
+                echo '</div>';
+                echo '</li>';
+            }
+            ?>
+        </ul>
     </section>
 </body>
 

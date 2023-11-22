@@ -50,71 +50,16 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="seu_estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/adicionar_jogo.css">
     <title>Adicionar Jogo</title>
 
-<style>
-    body {
-        margin: 0;
-        background-color: #555;
-        font-family: 'Roboto', sans-serif;
-    }
-
-    .container {
-        background-color: #555;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-    }
-
-    h1 {
-        color: #fff;
-    }
-
-    form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    label {
-        color: #fff;
-        margin-top: 10px;
-    }
-
-    input {
-        width: 100%;
-        padding: 10px;
-        margin: 5px 0;
-        border: 1px solid #fff;
-        border-radius: 15px;
-        background-color: transparent;
-        color: #fff;
-        box-sizing: border-box;
-    }
-
-    button {
-        width: 50%;
-        padding: 10px;
-        margin-top: 10px;
-        border: 1px solid #fff;
-        border-radius: 15px;
-        cursor: pointer;
-        font-family: 'Roboto', sans-serif;
-        background-color: transparent;
-        color: #fff;
-    }
-
-    button:hover {
-        background-color: #0056b3;
-    }
-</style>
 </head>
 <body>
     <div class="container">
