@@ -42,8 +42,8 @@ $usuario = $crudUsuario->buscarPorId($idUsuarioLogado);
         </div>
     </div>
     <div class="profile">
-                <h4>Nome: <?php echo $usuario['nome']; ?></h4>
-                <h4>Bio: <?php echo $usuario['bio']; ?></h4>
+                <h5>Nome: <?php echo $usuario['nome']; ?></h5>
+                <h5>Bio: <?php echo $usuario['bio']; ?></h5>
     </div>
 
     <div class="details">
