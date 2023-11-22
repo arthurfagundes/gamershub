@@ -30,6 +30,7 @@ $usuario = $crudUsuario->buscarPorId($idUsuarioLogado);
     <title>Perfil</title>
 </head>
 <body>
+    <div id="tudo">
     <div class="header">
         <img class="background-image" src="<?php echo $usuario['background_img']; ?>" alt="Imagem de Fundo">
         <div class="profile-image">
@@ -41,12 +42,13 @@ $usuario = $crudUsuario->buscarPorId($idUsuarioLogado);
         </div>
     </div>
     <div class="profile">
-                <h5>Nome: <?php echo $usuario['nome']; ?></h5>
-                <h5>Bio: <?php echo $usuario['bio']; ?></h5>
+                <h4>Nome: <?php echo $usuario['nome']; ?></h4>
+                <h4>Bio: <?php echo $usuario['bio']; ?></h4>
     </div>
 
     <div class="details">
         <!-- Outras informações detalhadas aqui -->
+    </div>
     </div>
 </body>
 </html>
