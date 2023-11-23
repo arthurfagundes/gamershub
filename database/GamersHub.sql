@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 21-Nov-2023 às 23:44
+-- Tempo de geração: 23-Nov-2023 às 23:25
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -33,19 +33,6 @@ CREATE TABLE `comentarios` (
   `usuario_id` int(11) NOT NULL,
   `posts_id` int(11) NOT NULL,
   `imagem` varchar(300) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `curtidas`
---
-
-CREATE TABLE `curtidas` (
-  `id` int(11) NOT NULL,
-  `posts_id` int(11) NOT NULL,
-  `usuario_id` int(11) NOT NULL,
-  `data_curtida` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -83,10 +70,20 @@ CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
   `titulo` varchar(255) NOT NULL,
   `texto` text NOT NULL,
+  `curtidas` int(11) DEFAULT 0,
   `usuario_id` int(11) NOT NULL,
-  `jogo_id` int(11) NOT NULL,
   `imagem` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Extraindo dados da tabela `posts`
+--
+
+INSERT INTO `posts` (`id`, `titulo`, `texto`, `curtidas`, `usuario_id`, `imagem`) VALUES
+(10, 'aaaaa', 'aaaaaaa', 0, 11, 'transferir.jpeg'),
+(11, 'dsadd', 'sdsdadadas', 0, 11, 'vava.png'),
+(12, 'dfgdfgfdg', 'hfghfhgf', 0, 11, 'eafc.jpg'),
+(13, 'dasdsakpdsad', 'dskandsinadsapo', 0, 11, 'eafc.jpg');
 
 -- --------------------------------------------------------
 
@@ -149,7 +146,8 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `datanasc`, `senha`, `imgperfil`, `background_img`, `bio`, `admin`) VALUES
 (10, 'arthur', 'arthuurfagundes@gmail.com', '2003-07-02', '$2y$10$WmgAKxgr3QDYn9LVVK8/JuwPo461t5CanWZP1P.foTAj.QCCYqNpC', 'img/Arthur.jpg', '', 'OI SOU O DEV ARTHUR', 0),
-(11, 'Txrrorzin', 'luisseverodasilva17@gmail.com', '2003-07-17', '$2y$10$cpyng/fkz9Cyx3l8HmxjNOSpsfyynQNh/DIWc51IWM4DaSVL1L6mu', 'img/neyme.jpeg', 'img/Captura de Tela (102).png', 'OI SOU O LUIS', 1);
+(11, 'Txrrorzin', 'luisseverodasilva17@gmail.com', '2003-07-17', '$2y$10$cpyng/fkz9Cyx3l8HmxjNOSpsfyynQNh/DIWc51IWM4DaSVL1L6mu', 'img/neyme.jpeg', 'img/fundinho.jpeg', 'OI SOU O LUIS', 1),
+(12, 'teste', 'teste@teste.com', '2003-01-01', '$2y$10$vmPKvg5sDSJR.hOAd9HAR.Y4EHTJ.9d.04BqVYk6CVUS08nDyK46O', '', '', '', 0);
 
 --
 -- Índices para tabelas despejadas
@@ -164,14 +162,6 @@ ALTER TABLE `comentarios`
   ADD KEY `posts_id` (`posts_id`);
 
 --
--- Índices para tabela `curtidas`
---
-ALTER TABLE `curtidas`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `posts_id` (`posts_id`),
-  ADD KEY `usuario_id` (`usuario_id`);
-
---
 -- Índices para tabela `jogos`
 --
 ALTER TABLE `jogos`
@@ -182,8 +172,7 @@ ALTER TABLE `jogos`
 --
 ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `usuario_id` (`usuario_id`),
-  ADD KEY `jogo_id` (`jogo_id`);
+  ADD KEY `usuario_id` (`usuario_id`);
 
 --
 -- Índices para tabela `reposts`
@@ -226,12 +215,6 @@ ALTER TABLE `comentarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `curtidas`
---
-ALTER TABLE `curtidas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT de tabela `jogos`
 --
 ALTER TABLE `jogos`
@@ -241,7 +224,7 @@ ALTER TABLE `jogos`
 -- AUTO_INCREMENT de tabela `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `reposts`
@@ -265,7 +248,7 @@ ALTER TABLE `seguindo`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Restrições para despejos de tabelas
@@ -279,18 +262,10 @@ ALTER TABLE `comentarios`
   ADD CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`posts_id`) REFERENCES `posts` (`id`);
 
 --
--- Limitadores para a tabela `curtidas`
---
-ALTER TABLE `curtidas`
-  ADD CONSTRAINT `curtidas_ibfk_1` FOREIGN KEY (`posts_id`) REFERENCES `posts` (`id`),
-  ADD CONSTRAINT `curtidas_ibfk_2` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
-
---
 -- Limitadores para a tabela `posts`
 --
 ALTER TABLE `posts`
-  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`),
-  ADD CONSTRAINT `posts_ibfk_2` FOREIGN KEY (`jogo_id`) REFERENCES `jogos` (`id`);
+  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
 
 --
 -- Limitadores para a tabela `reposts`
