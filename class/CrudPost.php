@@ -54,27 +54,6 @@ class CrudPost
         }
     }
 
-    public function exibirPost($id)
-    {
-        try {
-            $query = "SELECT * FROM " . $this->table_name . " WHERE id = ?";
-            $stmt = $this->conn->prepare($query);
-            $stmt->execute([$id]);
-
-            $post = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if ($post) {
-                echo "<h1>" . $post['titulo'] . "</h1>";
-                echo "<p>" . $post['texto'] . "</p>";
-                echo "<p>Curtidas: " . $post['curtidas'] . "</p>";
-            } else {
-                echo "Postagem não encontrada";
-            }
-        } catch (PDOException $e) {
-            echo "Erro ao exibir postagem: " . $e->getMessage();
-        }
-    }
-
     public function buscarPostPorId($id)
     {
         try {
@@ -99,9 +78,6 @@ class CrudPost
 
             if ($posts) {
                 foreach ($posts as $post) {
-                    echo "<h1>" . $post['titulo'] . "</h1>";
-                    echo "<p>" . $post['texto'] . "</p>";
-                    echo "<p>Curtidas: " . $post['curtidas'] . "</p>";
                     echo "<hr>";
                 }
             } else {
