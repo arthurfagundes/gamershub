@@ -3,35 +3,126 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
 }
 
 .container {
     text-align: center;
     padding: 20px;
+    background: linear-gradient(0, #120c56, #000000);
 }
-
-
 
 .galeria {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
+    overflow-x: auto;
 }
 
 .jogo {
-    width: 300px;
-    margin: 10px;
+    flex: 0 0 calc(30% - 20px);
+    margin: 20px 0px 20px 0;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #3498db;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
     text-align: center;
 }
 
 .jogo img {
-max-width: 100%;
-height: auto;
-max-height: 200px; /* Defina a altura máxima desejada */
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+}
+
+.jogo:hover {
+    transform: scale(1.05);
+    border-color: #2980b9;
 }
 
 button {
-    margin-top: 20px;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    padding: 5px 10px;
+    border: none;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+nav {
+    background: #555;
+    height: 120px;
+    width: 100%;
+}
+
+img.logo {
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 20px;
+    font-weight: bold;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    padding: 10px;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+a.active,
+a:hover {
+    background: gray;
+    transition: 0.5s;
+}
+
+.checkbtn {
+    font-size: 24px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+/* Media queries para tornar o layout mais responsivo */
+
+@media only screen and (max-width: 768px) {
+    .jogo {
+        flex: 0 0 calc(50% - 20px);
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .jogo {
+        flex: 0 0 calc(100% - 20px);
+    }
 }

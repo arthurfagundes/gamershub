@@ -1,54 +1,142 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
+    margin: 0px;
+    margin-top: -64px;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     height: 100vh;
-    /* Adiciona a imagem de background escolhida pelo usuário */
-}
-
-h1 {
+    background: linear-gradient(0, #000000, #333333);
+  }
+  
+  h1 {
     text-align: center;
-}
-
-form {
+    color: #fff;
+    margin: 20px 0 0;
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  form {
     max-width: 400px;
     width: 100%;
-    background-color: #fff;
+    background-color: #333;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-label {
+    border: 2px solid #007bff;
+  }
+  
+  label {
     display: block;
     margin-bottom: 8px;
-}
-
-input[type="text"],
-input[type="file"],
-textarea {
+    color: #fff;
+  }
+  
+  input[type="text"],
+  input[type="file"],
+  textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;
     box-sizing: border-box;
-}
-
-textarea {
-    resize: vertical;
-}
-
-input[type="submit"] {
+    border: 1px solid #ddd;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+  }
+  
+  /* Estilizando a input de arquivo */
+  input[type="file"] {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .label-file {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Estilizando o texto que mostra o nome do arquivo escolhido */
+  .file-name {
+    margin-top: 8px;
+    color: #fff;
+  }
+  
+  input[type="submit"] {
     background-color: #007bff;
     color: #fff;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+
+nav {
+  background: #555;
+  height: 120px;
+  width: 100%;
+  margin: 0; /* Remove margens padrão */
+  padding: 0; /* Remove preenchimento padrão */
 }
 
-input[type="submit"]:hover {
-    background-color: #0056b3;
+img.logo {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 20px;
+  font-weight: bold;
+}
+
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+  padding: 10px;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+a.active,
+a:hover {
+  background: gray;
+  transition: 0.5s;
+}
+
+.checkbtn {
+  font-size: 24px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
 }

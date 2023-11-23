@@ -74,6 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <!DOCTYPE html>
 <html lang="PT-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,7 +84,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>Editar Perfil</title>
 </head>
+
 <body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <img class="logo" src="./img/logo_semfundo.png" height="80">
+        <ul>
+            <li><a href="./perfil.php">Perfil</a></li>
+            <li><a href="./jogos.php">Jogos</a></li>
+            <li><a href="./login.php" onclick="$CrudUsuario.sair()">Sair</a></li>
+        </ul>
+    </nav>
     <h1>Editar Perfil</h1>
 
     <form action="" method="post" enctype="multipart/form-data">
@@ -102,4 +116,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <input type="submit" value="Salvar">
     </form>
 </body>
+
 </html>
