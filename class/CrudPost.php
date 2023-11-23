@@ -13,18 +13,20 @@ class CrudPost
     public function adicionarPost($titulo, $texto, $usuario_id, $imagem)
     {
         try {
-            // Removed game ID from query
+            // Insira a postagem no banco de dados
             $query = "INSERT INTO " . $this->table_name . " (titulo, texto, usuario_id, imagem) VALUES (?, ?, ?, ?)";
             $stmt = $this->conn->prepare($query);
-            // Setting likes to 0 by default
-            $stmt->execute([$titulo, $texto, $usuario_id, $imagem, 0]);
-
+            $stmt->execute([$titulo, $texto, $usuario_id, $imagem]);
+    
+            // Mova o arquivo para o diretório desejado
+            move_uploaded_file($_FILES['imagem']['tmp_name'], './img/' . $imagem);
+    
             echo "Postagem criada com sucesso!";
         } catch (PDOException $e) {
             echo "Erro ao criar postagem: " . $e->getMessage();
         }
     }
-
+    
     public function curtirPost($id)
     {
         try {
