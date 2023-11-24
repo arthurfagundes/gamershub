@@ -36,7 +36,7 @@ $usuario = $crudUsuario->buscarPorId($idUsuarioLogado);
 <body>
     <nav>
         <a class="homelogo" href="./home.php">
-            <img class="logo" src="./img/logo_semfundo.png" height="80">
+            <img class="logo" src="./img/logogamershub.png" height="80">
         </a>
         <ul>
             <li><a href="./home.php">Home</a></li>
@@ -44,7 +44,7 @@ $usuario = $crudUsuario->buscarPorId($idUsuarioLogado);
             <li><a href="./login.php" onclick="$CrudUsuario.sair()">Sair</a></li>
         </ul>
     </nav>
-    <div id="tudo">
+    <div class="tudo">
         <div class="header">
             <img class="background-image" src="<?php echo $usuario['background_img']; ?>" alt="Imagem de Fundo">
             <div class="profile-image">
@@ -100,9 +100,6 @@ $usuario = $crudUsuario->buscarPorId($idUsuarioLogado);
                 ?>
             </ul>
         </section>
-        <div class="details">
-            <!-- Outras informações detalhadas aqui -->
-        </div>
     </div>
 </body>
 

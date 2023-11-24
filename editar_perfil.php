@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <img class="logo" src="./img/logogamershub (2).png" height="80">
+        <img class="logo" src="./img/logogamershub.png" height="80">
         <ul>
             <li><a href="./perfil.php">Perfil</a></li>
             <li><a href="./jogos.php">Jogos</a></li>
