@@ -18,8 +18,8 @@
         </label>
         <img class="logo" src="./img/logogamershub.png" height="80">
         <ul>
+            <li><a href="./home.php">Home</a></li>
             <li><a href="./perfil.php">Perfil</a></li>
-            <li><a href="./jogos.php">Jogos</a></li>
             <li><a href="./login.php" onclick="$CrudUsuario.sair()">Sair</a></li>
         </ul>
     </nav>
