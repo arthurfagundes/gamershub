@@ -27,33 +27,6 @@ class CrudPost
         }
     }
     
-    public function curtirPost($id)
-    {
-        try {
-            // Removed game ID from query
-            $query = "UPDATE " . $this->table_name . " SET curtidas = curtidas + 1 WHERE id = ?";
-            $stmt = $this->conn->prepare($query);
-            $stmt->execute([$id]);
-
-            echo "Postagem curtida com sucesso!";
-        } catch (PDOException $e) {
-            echo "Erro ao curtir postagem: " . $e->getMessage();
-        }
-    }
-
-    public function deletarPost($id)
-    {
-        try {
-            $query = "DELETE FROM " . $this->table_name . " WHERE id=?";
-            $stmt = $this->conn->prepare($query);
-            $stmt->execute([$id]);
-
-            echo "Postagem excluída com sucesso!";
-        } catch (PDOException $e) {
-            echo "Erro ao excluir postagem: " . $e->getMessage();
-        }
-    }
-
     public function buscarPostPorId($id)
     {
         try {
@@ -87,6 +60,45 @@ class CrudPost
             return $posts;
         } catch (PDOException $e) {
             echo "Erro ao exibir postagens: " . $e->getMessage();
+        }
+    }
+
+    public function curtirPost($post_id)
+    {
+        try {
+            $query = "UPDATE " . $this->table_name . " SET curtidas = curtidas + 1 WHERE id = ?";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute([$post_id]);
+
+            echo "Postagem curtida com sucesso!";
+        } catch (PDOException $e) {
+            echo "Erro ao curtir postagem: " . $e->getMessage();
+        }
+    }
+
+    public function deletarPost($post_id)
+    {
+        try {
+            // Primeiro, obtenha o nome da imagem para excluí-la do diretório
+            $imagem_query = "SELECT imagem FROM " . $this->table_name . " WHERE id = ?";
+            $imagem_stmt = $this->conn->prepare($imagem_query);
+            $imagem_stmt->execute([$post_id]);
+            $imagem_result = $imagem_stmt->fetch(PDO::FETCH_ASSOC);
+
+            // Exclua a imagem do diretório
+            $imagem_path = './img/' . $imagem_result['imagem'];
+            if (file_exists($imagem_path)) {
+                unlink($imagem_path);
+            }
+
+            // Agora, delete a postagem do banco de dados
+            $query = "DELETE FROM " . $this->table_name . " WHERE id = ?";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute([$post_id]);
+
+            echo "Postagem deletada com sucesso!";
+        } catch (PDOException $e) {
+            echo "Erro ao deletar postagem: " . $e->getMessage();
         }
     }
 }
