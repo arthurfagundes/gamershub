@@ -46,7 +46,7 @@ button {
     margin-bottom: 4%;
     padding: 5px 10px;
     border: none;
-    background-color: #4caf50;
+    background-color: #2980b9;
     color: white;
     cursor: pointer;
     border-radius: 5px;
@@ -55,11 +55,11 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #5591b9;
 }
 
 nav {
-    background: #555;
+    background: black;
     height: 120px;
     width: 100%;
 }
@@ -95,7 +95,7 @@ nav ul li a {
 
 a.active,
 a:hover {
-    background: gray;
+    background: #5591b9;
     transition: 0.5s;
 }
 

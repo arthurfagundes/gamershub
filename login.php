@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="container">
         <main class="meio">
             <div class="Titulo">
-                <img src="./img/logo_semfundo.png" height="150">
+                <img src="./img/logogamershub.png" height="150">
                 <p>Logue na sua conta</p>
             </div>
             <div class="Logar">
@@ -48,7 +48,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <button type="submit">Logar</button>
                     <button type="button" onclick="window.location.href='register.php';">Registrar</button>
                 </form>
-                <hr class="divisoria">
             </div>
         </main>
     </div>
