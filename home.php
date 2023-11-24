@@ -3,9 +3,11 @@
     include './config/config.php';
     include './class/CrudUsuario.php';
     include './class/CrudPost.php';
-
+    include './class/CrudComentarios.php'; // Adicionado o arquivo do CrudComentarios
+    
     $crudUsuario = new CrudUsuario($db);
     $crudPost = new CrudPost($db);
+    $crudComentarios = new CrudComentarios($db); // Instância do CrudComentarios
 
     // Verifica se o usuário está logado
     if (!isset($_SESSION['id'])) {
@@ -57,35 +59,28 @@
         header("Location: ".$_SERVER['PHP_SELF']);
         exit();
     }
+
+    // Ação de comentar
+    if (isset($_POST['comentar'])) {
+    $comentario_texto = $_POST['comentario_texto'];
+    $comentario_imagem = $_FILES['comentario_imagem']['name'];
+    $comentario_usuario_id = $idUsuarioLogado;
+    $comentario_post_id = $_POST['post_id'];
+
+    // Move o arquivo para o diretório desejado (ajuste o caminho conforme necessário)
+    move_uploaded_file($_FILES['comentario_imagem']['tmp_name'], './img/' . $comentario_imagem);
+
+    // Adiciona o comentário usando o método da classe CrudComentarios
+    $crudComentarios->criarComentario($comentario_texto, $comentario_usuario_id, $comentario_post_id, $comentario_imagem);
+
+    // Redireciona de volta à página principal ou aonde você desejar
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit();
 }
+}
+
+include_once('cabecalhohome.php');
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="./css/home.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <title>GamersHub</title>
-</head>
-
-<body>
-    <nav>
-        <img class="logo" src="./img/logo_semfundo.png" height="80">
-        <ul>
-            <li><a href="./perfil.php">Perfil</a></li>
-            <li><a href="./jogos.php">Jogos</a></li>
-            <li><a href="./login.php" onclick="$CrudUsuario.sair()">Sair</a></li>
-        </ul>
-    </nav>
 
     <section>
         <div class="publicar">
@@ -111,7 +106,7 @@
     <h2>Postagens</h2>
 
     <ul class="postagens-list">
-        <?php
+    <?php
         if ($crudPost instanceof CrudPost) {
             $postagens = $crudPost->listarPostagens();
 
@@ -145,6 +140,37 @@
                     echo '<button type="submit" name="deletar_post">Deletar</button>';
                     echo '</form>';
                     echo '</div>';
+
+                    echo '<div class="comentarios">';
+                    echo '<h3>Comentários</h3>';
+        
+                    // Exibe os comentários usando o método da classe CrudComentarios
+                    $comentarios = $crudComentarios->exibirComentarios($post_id);
+        
+                    foreach ($comentarios as $comentario) {
+                        $comentario_usuario = $crudUsuario->buscarPorId($comentario['usuario_id']);
+        
+                        echo '<div class="comentario">';
+                        echo '<img class="profile-image" src="' . $comentario_usuario['imgperfil'] . '" alt="Imagem do Perfil">';
+                        echo '<div class="comentario-info">';
+                        echo '<div class="profile-name">' . $comentario_usuario['nome'] . '</div>';
+                        echo '<p>' . $comentario['texto'] . '</p>';
+                        if (!empty($comentario['imagem'])) {
+                            echo '<img class="comentario-image" src="./img/' . $comentario['imagem'] . '" alt="Imagem de Comentário">';
+                        }
+                        echo '</div>';
+                        echo '</div>';
+                    }
+        
+                    // Formulário para adicionar comentário
+                    echo '<form method="post" enctype="multipart/form-data">';
+                    echo '<input type="hidden" name="post_id" value="' . $post_id . '">';
+                    echo '<textarea name="comentario_texto" placeholder="Adicione um comentário"></textarea>';
+                    echo '<input type="file" name="comentario_imagem" accept="image/*">';
+                    echo '<button type="submit" name="comentar">Comentar</button>';
+                    echo '</form>';
+
+                    echo '</div>'; // Fim da seção de comentários
 
                 echo '</li>';
             }
