@@ -51,10 +51,9 @@
 </head>
 <body>
     <div class="container">
-        <!-- Main-->
         <main class="meio">
             <div class="Titulo">
-                <img src="./img/logo_semfundo.png" height="150">
+                <img src="./img/logogamershub.png" height="150">
                 <p>Crie sua conta</p>
             </div>
             <div class="Logar">
@@ -65,9 +64,8 @@
                     <input type="text" id="email" name="email" placeholder="Digite seu e-mail" required>
                     <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
                     <input type="password" id="rpassword" name="rpassword" placeholder="Repita sua senha" required>
-                    <button type="submit">CADASTRAR</button>
+                    <button type="submit">Cadastrar</button>
                 </form>
-                <hr class="divisoria">
             </div>
         </main>
         <!-- Rodape-->
