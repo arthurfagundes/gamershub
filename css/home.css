@@ -8,16 +8,20 @@
 
 body {
   font-family: "Roboto", sans-serif;
-  background-color: black;
+  background: linear-gradient(0, #120c56, #000000);
+  padding: 10px auto;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 nav {
-  background: #555;
+  background: black;
   height: 80px;
   width: 100%;
+  
 }
 
 img.logo {
@@ -47,6 +51,14 @@ nav ul li a {
   text-transform: uppercase;
 }
 
+form {
+  flex-direction: column;
+  justify-content: space-around;
+  display: flex;
+  
+
+}
+
 a.active,
 a:hover {
   background: gray;
@@ -54,11 +66,13 @@ a:hover {
 }
 
 section {
-  width: 80%; /* ou qualquer largura desejada */
+  width: 40%; /* ou qualquer largura desejada */
   margin: 20px 0;
-  background-color: white;
   border-radius: 8px;
   padding: 20px;
+  border: 1px solid white;
+  padding: 20px;
+  border-radius: 8px;
 }
 
 .publicar {
@@ -71,8 +85,28 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: white;
+
+
 }
 
+button {
+  margin: 30px;
+  margin-top: 2%;
+  margin-bottom: 4%;
+  padding: 3px 7px;
+  border: none;
+  background-color: #2980b9;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
 .postagens-list {
   list-style: none;
   padding: 0;
@@ -93,12 +127,77 @@ section {
 .profile-info {
   display: flex;
   align-items: center;
+  color: white;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 12px;
+  background: linear-gradient(0, #403e4f, #414141);
+  color: white;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 12px;
+  background: linear-gradient(0, #403e4f, #414141);
+  resize: none;
+  color: white;
+}
+
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 12px;
+  color: white;
+}
+
+.label-file {
+  display: inline-block;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.box-image {
+  width: 300px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.box-profile {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .profile-image {
-  width: 50px; /* ou o tamanho desejado */
-  height: 50px; /* ou o tamanho desejado */
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  margin-right: 10px;
   margin-right: 10px;
 }
 
@@ -164,7 +263,6 @@ section {
   }
 
   #check:checked ~ ul {
-  left: 0;
+    left: 0;
   }
-
 }

@@ -86,15 +86,16 @@ include_once('cabecalhohome.php');
         <div class="publicar">
             <?php
             $usuarioLogado = $crudUsuario->buscarPorId($idUsuarioLogado);
-
+            echo"<div class= 'box-image'>";
             echo '<img class="profile-image" src="' . $usuarioLogado['imgperfil'] . '" alt="Imagem do Perfil">';
-            echo '<div>';
+            echo"<div class='box-profile'>";
             echo '<div class="profile-name">' . $usuarioLogado['nome'] . '</div>';
+            echo'</div>';
             echo '</div>';
             ?>
 
             <form method="post" enctype="multipart/form-data">
-                <input type="text" name="titulo" placeholder="Título da postagem">
+                <input type="text" name="titulo" placeholder="Título da postagem...">
                 <textarea name="novidade" id="novidade" cols="30" rows="5" placeholder=" O que você está jogando?..."></textarea>
                 <input type="file" name="imagem" accept="image/*">
                 <button type="submit">Publicar</button>
