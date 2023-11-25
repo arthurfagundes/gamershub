@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Roboto", sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -36,6 +36,9 @@ body {
     max-height: 200px;
 }
 
+.jogo a {
+    text-decoration: none !important;
+}
 .jogo:hover {
     transform: scale(1.05);
     border-color: #2980b9;
@@ -93,7 +96,9 @@ nav ul li a {
     text-decoration: none;
 }
 
-a.active,
+a{
+    text-decoration: none;
+}
 a:hover {
     background: #5591b9;
     transition: 0.5s;
