@@ -101,4 +101,17 @@ class CrudPost
             echo "Erro ao deletar postagem: " . $e->getMessage();
         }
     }
+
+    public function listarPostagensPorUsuario($usuario_id)
+    {
+        try {
+            $query = "SELECT * FROM " . $this->table_name . " WHERE usuario_id = ?";
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute([$usuario_id]);
+
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo "Erro ao listar postagens por usuário: " . $e->getMessage();
+        }
+    }
 }

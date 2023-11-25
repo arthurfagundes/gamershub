@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 23-Nov-2023 às 23:25
+-- Tempo de geração: 25-Nov-2023 às 01:20
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -34,6 +34,16 @@ CREATE TABLE `comentarios` (
   `posts_id` int(11) NOT NULL,
   `imagem` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Extraindo dados da tabela `comentarios`
+--
+
+INSERT INTO `comentarios` (`id`, `texto`, `usuario_id`, `posts_id`, `imagem`) VALUES
+(3, 'sss', 11, 24, ''),
+(4, 'ssss', 11, 24, ''),
+(5, 'UAU', 11, 25, 'vava.png'),
+(6, 'Nossa', 10, 25, 'transferir.jpeg');
 
 -- --------------------------------------------------------
 
@@ -80,10 +90,8 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `titulo`, `texto`, `curtidas`, `usuario_id`, `imagem`) VALUES
-(10, 'aaaaa', 'aaaaaaa', 0, 11, 'transferir.jpeg'),
-(11, 'dsadd', 'sdsdadadas', 0, 11, 'vava.png'),
-(12, 'dfgdfgfdg', 'hfghfhgf', 0, 11, 'eafc.jpg'),
-(13, 'dasdsakpdsad', 'dskandsinadsapo', 0, 11, 'eafc.jpg');
+(24, 'ss', 'ss', 0, 11, ''),
+(25, 'sda', 'sdadsa', 1, 11, 'vava.png');
 
 -- --------------------------------------------------------
 
@@ -212,7 +220,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `jogos`
@@ -224,7 +232,7 @@ ALTER TABLE `jogos`
 -- AUTO_INCREMENT de tabela `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de tabela `reposts`
