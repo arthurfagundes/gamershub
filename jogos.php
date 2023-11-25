@@ -3,11 +3,11 @@ session_start();
 include './config/config.php';
 include './class/CrudUsuario.php';
 include './class/CrudJogos.php';
+include_once('cabecalhojogos.php');
 
 $crudUsuario = new CrudUsuario($db);
 $crudJogos = new CrudJogos($db);
 
-include_once('cabecalhojogos.php');
 ?>
 
 
@@ -29,7 +29,7 @@ include_once('cabecalhojogos.php');
                 echo '<div class="jogo">';
                 echo '<h3>' . $jogo['nomejogo'] . '</h3>';
 
-                echo '<img src="' . $jogo['imgjogo'] . '" alt="Imagem do Jogo">';
+                echo '<a href="https://discord.gg/fCtF7Q7zpP"><img src="' . $jogo['imgjogo'] . '" alt="Imagem do Jogo"></a>';
 
                 echo '<p>Desenvolvedora: ' . $jogo['nomedesenvolvedora'] . '</p>';
 
