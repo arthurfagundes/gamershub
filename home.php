@@ -52,8 +52,9 @@
 
     // Ação de deletar
     if (isset($_POST['deletar_post'])) {
-        $post_id = $_POST['post_id'];
+        $post_id = $_POST['post_id']; 
         $crudPost->deletarPost($post_id);
+
 
         // Redireciona de volta à página principal ou aonde você desejar
         header("Location: ".$_SERVER['PHP_SELF']);

@@ -92,8 +92,8 @@ class CrudPost
             }
 
             // Agora, delete a postagem do banco de dados
-            $query = "DELETE FROM " . $this->table_name . " WHERE id = ?";
-            $stmt = $this->conn->prepare($query);
+            $query = "DELETE FROM " . $this->table_name . " WHERE id = ?"; 
+            $stmt = $this->conn->prepare($query); 
             $stmt->execute([$post_id]);
 
             echo "Postagem deletada com sucesso!";
