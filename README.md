@@ -29,9 +29,21 @@ A aplicação consiste em uma rede social voltada para o público gamer, projeta
 <img src="https://github.com/arthurfagundes/gamershub/assets/64553764/c88b4022-c2a8-435a-b3a0-e9f9af1497f6">
 </p>
 
+## Layout Home
+<p align="center">
+<img src="https://github.com/arthurfagundes/gamershub/assets/64553764/b51f51ae-de37-469e-8fe7-01b850afbbc3">
+<img src="https://github.com/arthurfagundes/gamershub/assets/64553764/f08536ac-299f-4b5f-b286-d6997327a4aa">
+</p>
+
+## Layout Perfil
+<p align="center">
+<img src="https://github.com/arthurfagundes/gamershub/assets/64553764/8ca4cb84-5dc5-420a-a7b6-f1178460c8bf">
+<img src="https://github.com/arthurfagundes/gamershub/assets/64553764/e99cf1a3-55b2-444a-b721-a6bc28be04e7"
+</p>
+
 ## Layout Editar Perfil
 <p align="center">
-<img src="https://github.com/arthurfagundes/gamershub/assets/64553764/86ee606f-697d-4f3c-bffa-e2cb79091b56">
+<img src="https://github.com/arthurfagundes/gamershub/assets/64553764/f9e18fbf-e912-464a-a6ed-87a102f53743">
 </p>
 
 ## Layout Jogos
@@ -41,7 +53,7 @@ A aplicação consiste em uma rede social voltada para o público gamer, projeta
 </p>
 
 ## Modelo entidade relacionamento
-![Diagrama do DataBase](https://github.com/arthurfagundes/gamershub/assets/64553764/c13c7376-127c-46ce-b2f6-91a3674b94a4)
+![Diagrama do DataBase](https://github.com/arthurfagundes/gamershub/assets/64553764/6ad248e6-3a80-4e28-b863-651c4d849811)
 
 # 🖱️ Tecnologias Utilizadas
 - PHP
