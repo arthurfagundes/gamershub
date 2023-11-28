@@ -1,4 +1,5 @@
 <?php
+include_once("./cabecalhoperfil.php");
 session_start();
 include './config/config.php';
 include './class/CrudUsuario.php';
@@ -24,33 +25,32 @@ $usuario = $crudUsuario->buscarPorId($idUsuarioLogado);
 // Busca os posts do usuário
 $postsDoUsuario = $crudPost->listarPostagensPorUsuario($idUsuarioLogado);
 
-include_once('cabecalhoperfil.php');
+
 ?>
 
-
-    <div class="Container">
-        <div class="perfil">
-            <img class="background-image" src="<?php echo $usuario['background_img']; ?>" alt="Imagem de Fundo">
-            <div class="profile-image">
-                <img class="profile-image" src="<?php echo $usuario['imgperfil']; ?>" alt="Imagem de Perfil">
-            </div>
-            <div>
-                <a class="botaoeditarperfil" href="editar_perfil.php">Editar Perfil</a>
-            </div>
+<div class="Container">
+    <div class="perfil">
+        <img class="background-image" src="<?php echo $usuario['background_img']; ?>" alt="Imagem de Fundo">
+        <div class="profile-image">
+            <img class="profile-image" src="<?php echo $usuario['imgperfil']; ?>" alt="Imagem de Perfil">
         </div>
-        <div class="infoperfil">
-            <h5>Nome: <?php echo $usuario['nome']; ?></h5>
-            <h5>Bio: <?php echo $usuario['bio']; ?></h5>
+    </div>
+    <div class="infoperfil">
+        <h5>Nome: <?php echo $usuario['nome']; ?></h5>
+        <h5>Bio: <?php echo $usuario['bio']; ?></h5>
+        <div>
+            <a class="botaoeditarperfil" href="editar_perfil.php">Editar Perfil</a>
         </div>
+    </div>
 
-         <!-- Exibir os posts do usuário -->
+    <div class="postagens-comentarios">
         <div class="posts-do-usuario">
             <h2>Posts do Perfil</h2>
             <ul>
                 <?php
                 foreach ($postsDoUsuario as $post) {
                     $usuarioPost = $crudUsuario->buscarPorId($post['usuario_id']);
-                    
+
                     echo '<li>';
                     echo '<div class="profile-info">';
                     echo '<img class="profile-image" src="' . $usuarioPost['imgperfil'] . '" alt="Imagem do Perfil">';
@@ -64,7 +64,6 @@ include_once('cabecalhoperfil.php');
             </ul>
         </div>
 
-        <!-- Exibir os comentários do usuário -->
         <div class="comentarios-do-usuario">
             <h2>Comentários do Perfil</h2>
             <ul>
@@ -89,6 +88,7 @@ include_once('cabecalhoperfil.php');
             </ul>
         </div>
     </div>
+</div>
 </body>
 
 </html>

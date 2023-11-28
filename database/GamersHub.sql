@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Nov-2023 às 01:20
+-- Tempo de geração: 28-Nov-2023 às 01:44
 -- Versão do servidor: 10.4.28-MariaDB
 -- versão do PHP: 8.2.4
 
@@ -40,10 +40,7 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`id`, `texto`, `usuario_id`, `posts_id`, `imagem`) VALUES
-(3, 'sss', 11, 24, ''),
-(4, 'ssss', 11, 24, ''),
-(5, 'UAU', 11, 25, 'vava.png'),
-(6, 'Nossa', 10, 25, 'transferir.jpeg');
+(22, 'COMENTARIO', 11, 33, 'RELACIONADOS STORY.png');
 
 -- --------------------------------------------------------
 
@@ -90,8 +87,8 @@ CREATE TABLE `posts` (
 --
 
 INSERT INTO `posts` (`id`, `titulo`, `texto`, `curtidas`, `usuario_id`, `imagem`) VALUES
-(24, 'ss', 'ss', 0, 11, ''),
-(25, 'sda', 'sdadsa', 1, 11, 'vava.png');
+(32, 'sdadsad', 'sadsad', 0, 11, ''),
+(33, 'JOGO DO YOKOHAMA', 'YOKOHAMA', 0, 11, 'DIA DE JOGO.png');
 
 -- --------------------------------------------------------
 
@@ -220,7 +217,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de tabela `jogos`
@@ -232,7 +229,7 @@ ALTER TABLE `jogos`
 -- AUTO_INCREMENT de tabela `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de tabela `reposts`

@@ -66,13 +66,12 @@ a:hover {
 }
 
 section {
-  width: 40%; /* ou qualquer largura desejada */
+  width: 40%; 
   margin: 20px 0;
   border-radius: 8px;
   padding: 20px;
-  border: 1px solid white;
-  padding: 20px;
   border-radius: 8px;
+  border: 1px solid #2980b9;
 }
 
 .publicar {
@@ -86,8 +85,9 @@ section {
   flex-direction: column;
   align-items: center;
   color: white;
-
-
+  width: 70%; 
+  margin: 40px 0;
+  padding: 20px;
 }
 
 button {
@@ -135,10 +135,10 @@ input[type="text"] {
   margin-top: 20px;
   margin-bottom: 20px;
   box-sizing: border-box;
-  border: 1px solid #ddd;
+  border: 1px solid #2980b9;
   border-radius: 5px;
   font-size: 12px;
-  background: linear-gradient(0, #403e4f, #414141);
+  background: linear-gradient(0, #120c56, #000000);
   color: white;
 }
 
@@ -147,10 +147,10 @@ textarea {
   padding: 10px;
   margin-bottom: 10px;
   box-sizing: border-box;
-  border: 1px solid #ddd;
+  border: 1px solid #2980b9;
   border-radius: 5px;
   font-size: 12px;
-  background: linear-gradient(0, #403e4f, #414141);
+  background: linear-gradient(0, #120c56, #000000);
   resize: none;
   color: white;
 }
