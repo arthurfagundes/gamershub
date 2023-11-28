@@ -1,0 +1,238 @@
+/* Reset CSS */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  background: linear-gradient(0, #120c56, #000000);
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  text-align: center;
+  padding: 10px;
+  background: linear-gradient(0, #120c56, #000000);
+}
+
+.perfil {
+  position: relative;
+  text-align: center;
+}
+
+.background-image {
+  width: 80%;
+  height: 200px;
+  border-radius: 15px;
+  margin-top: 40px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+}
+
+.botaoeditarperfil {
+  margin-top: 20px;
+  background-color: #2980b9;
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.botaoeditarperfil:hover {
+  background-color: #e0f3ff;
+}
+
+.infoperfil {
+  width: 80%;
+  height: 200px;
+  border-radius: 30px;
+  text-align: left;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.infoperfil h5 {
+  font-family: "Noto Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  height: 100px;
+  width: 40%;
+  color: white;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid #0082e6;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.infoperfil h5:hover {
+  transform: scale(1.05); 
+  z-index: 1; 
+}
+
+.postagens-comentarios {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.posts-do-usuario,
+.comentarios-do-usuario {
+  margin: 10px auto;
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.posts-do-usuario h2,
+.comentarios-do-usuario h2 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.posts-do-usuario ul,
+.comentarios-do-usuario ul {
+  list-style: none;
+  padding: 0;
+}
+
+.posts-do-usuario li,
+.comentarios-do-usuario li {
+  background-color: #191b28;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+}
+
+.profile-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.profile-name {
+  color: #2980b9;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+nav {
+  background: black;
+  height: 120px;
+  width: 100%;
+}
+
+img.logo {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 20px;
+  font-weight: bold;
+}
+
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+  padding: 10px;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  background: #5591b9;
+  transition: 0.5s;
+}
+
+.checkbtn {
+  font-size: 24px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+a:hover,
+a.active {
+  background: none;
+  color: #0082e6;
+}
+
+@media screen and (max-width: 768px) {
+  nav ul {
+    left: 0;
+  }
+
+  .postagens-comentarios {
+    flex-direction: column;
+  }
+
+  .posts-do-usuario,
+  .comentarios-do-usuario {
+    width: 100%;
+  }
+}
