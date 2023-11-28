@@ -1,5 +1,5 @@
 <p align="center">
-  <a>
+  <a href="https://discord.gg/fCtF7Q7zpP">
     <img src="./img/logo.png" height="220">
   </a>
 </p>
@@ -14,49 +14,31 @@ Aplicação web construída durante a matéria de Websites II.
 
 A aplicação consiste em uma rede social voltada para o público gamer, projetada para aprimorar sua experiência de jogo. Um espaço dinâmico para jogadores que buscam mergulhar ainda mais fundo no universo dos videogames.
 
-## Esboço Logo
+## Layout Logo
+<p align="center">
+<img src="https://github.com/arthurfagundes/gamershub/assets/64553764/3d8e5a09-302a-4551-beaf-07ca3056d019" height="220">
+</p>
 
-![esboco_logo](https://github.com/arthurfagundes/gamershub/assets/64553764/e47f55ac-88dc-4930-89a4-2bdce6ca8315)
+## Layout Login
+<p align="center">
+<img src="https://github.com/arthurfagundes/gamershub/assets/64553764/229fa9d5-32fa-414d-9400-d35aac322b88">
+</p>
 
-## Esboço Login
+## Layout Cadastro
+<p align="center">
+<img src="https://github.com/arthurfagundes/gamershub/assets/64553764/c88b4022-c2a8-435a-b3a0-e9f9af1497f6">
+</p>
 
-![esboco_login](https://github.com/arthurfagundes/gamershub/assets/64553764/9f8d6425-2295-4d30-be9e-45a189c85d5d)
+## Layout Editar Perfil
+<p align="center">
+<img src="https://github.com/arthurfagundes/gamershub/assets/64553764/86ee606f-697d-4f3c-bffa-e2cb79091b56">
+</p>
 
-## Esboço Cadastro
+## Layout Jogos
 
-![esboco_cadastro](https://github.com/arthurfagundes/gamershub/assets/64553764/35efa5d2-140a-4c44-869d-0909084637c3)
-
-## Esboço Para Você
-
-![esboco_fy](https://github.com/arthurfagundes/gamershub/assets/64553764/c1007e63-9035-45ff-a9ec-b1d79e2b3284)
-
-## Esboço Amigos
-
-![esboco_amigos](https://github.com/arthurfagundes/gamershub/assets/64553764/fc192a9b-24e1-46ac-98a8-9fe9ddb313d1)
-
-## Esboço Menu
-
-![esboco_menu](https://github.com/arthurfagundes/gamershub/assets/64553764/0ed3015d-d63f-4562-867d-326160a0a36e)
-
-## Esboço Mais
-
-![esboco_mais](https://github.com/arthurfagundes/gamershub/assets/64553764/2422642f-7e94-4f39-a44b-305107f19991)
-
-## Esboço Perfil
-
-![esboco_perfil](https://github.com/arthurfagundes/gamershub/assets/64553764/7e30ba7d-46c2-4156-b783-b0a15f71d44b)
-
-## Esboço Editar Perfil
-
-![esboco_editperf](https://github.com/arthurfagundes/gamershub/assets/64553764/909f64dd-b02f-4ba9-b4ef-68d2b4ddf1c7)
-
-## Esboço Meus Jogos
-
-![esboco_meusjogos](https://github.com/arthurfagundes/gamershub/assets/64553764/1272a59a-9a86-4f54-b718-29c419e2013f)
-
-## Esboço Curtidas
-
-![esboco_likes](https://github.com/arthurfagundes/gamershub/assets/64553764/810aae31-3525-4cc6-8042-e4861197f411)
+<p align="center">
+<img src="https://github.com/arthurfagundes/gamershub/assets/64553764/982b11bf-d64f-4e0c-8e53-3e0e28274d68">
+</p>
 
 ## Modelo entidade relacionamento
 ![Diagrama do DataBase](https://github.com/arthurfagundes/gamershub/assets/64553764/c13c7376-127c-46ce-b2f6-91a3674b94a4)
