@@ -53,8 +53,18 @@
     // Ação de deletar
     if (isset($_POST['deletar_post'])) {
         $post_id = $_POST['post_id']; 
+        var_dump($post_id); // Adicione esta linha
         $crudPost->deletarPost($post_id);
 
+        // Redireciona de volta à página principal ou aonde você desejar
+        header("Location: ".$_SERVER['PHP_SELF']);
+        exit();
+    }
+    
+    // Verificar se o formulário para apagar comentário foi enviado
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deletar_comentario'])) {
+        $comentario_id = $_POST['comentario_id'];
+        $crudComentarios->apagarComentario($comentario_id);
 
         // Redireciona de volta à página principal ou aonde você desejar
         header("Location: ".$_SERVER['PHP_SELF']);
@@ -77,7 +87,7 @@
     // Redireciona de volta à página principal ou aonde você desejar
     header("Location: " . $_SERVER['PHP_SELF']);
     exit();
-}
+    }
 }
 
 include_once('cabecalhohome.php');
@@ -111,7 +121,7 @@ include_once('cabecalhohome.php');
     <?php
         if ($crudPost instanceof CrudPost) {
             $postagens = $crudPost->listarPostagens();
-
+            
             foreach ($postagens as $postagem) {
                 $usuario = $crudUsuario->buscarPorId($postagem['usuario_id']);
                 $post_id = $postagem['id'];
@@ -137,7 +147,7 @@ include_once('cabecalhohome.php');
                     echo '</div>';
 
                     echo '<div class="dell">';
-                    echo '<form method="post" class="deletar-form">';
+                    echo '<form method="post" class="deletar-form" onsubmit="return confirm(\'Tem certeza que deseja deletar esta postagem?\');">';
                     echo '<input type="hidden" name="post_id" value="' . $post_id . '">';
                     echo '<button type="submit" name="deletar_post">Deletar</button>';
                     echo '</form>';
@@ -149,13 +159,13 @@ include_once('cabecalhohome.php');
                     // Exibe os comentários usando o método da classe CrudComentarios
                     $comentarios = $crudComentarios->exibirComentarios($post_id);
         
+                    // Dentro do loop que exibe os comentários
                     foreach ($comentarios as $comentario) {
-                        $comentario_usuario = $crudUsuario->buscarPorId($comentario['usuario_id']);
-        
+                        $usuarioLogado = $crudUsuario->buscarPorId($idUsuarioLogado);
                         echo '<div class="comentario">';
-                        echo '<img class="profile-image" src="' . $comentario_usuario['imgperfil'] . '" alt="Imagem do Perfil">';
+                        echo '<img class="profile-image" src="' . $idUsuarioLogado['imgperfil'] . '" alt="Imagem do Perfil">';
                         echo '<div class="comentario-info">';
-                        echo '<div class="profile-name">' . $comentario_usuario['nome'] . '</div>';
+                        echo '<div class="profile-name">' . $idUsuarioLogado['nome'] . '</div>';
                         echo '<p>' . $comentario['texto'] . '</p>';
                         if (!empty($comentario['imagem'])) {
                             echo '<img class="comentario-image" src="./img/' . $comentario['imagem'] . '" alt="Imagem de Comentário">';
@@ -172,7 +182,13 @@ include_once('cabecalhohome.php');
                     echo '<button type="submit" name="comentar">Comentar</button>';
                     echo '</form>';
 
-                    echo '</div>'; // Fim da seção de comentários
+                    // // Adicione o formulário e o botão de apagar
+                    // echo '<form method="post" class="deletar-comentario-form" onsubmit="return confirm(\'Tem certeza que deseja deletar este comentário?\');">';
+                    // echo '<input type="hidden" name="comentario_id" value="' . $comentario['id'] . '">';
+                    // echo '<button type="submit" name="deletar_comentario">Apagar Comentário</button>';
+                    // echo '</form>';
+
+                    echo '</div>';
 
                 echo '</li>';
             }

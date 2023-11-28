@@ -96,7 +96,7 @@ class CrudPost
             $stmt = $this->conn->prepare($query); 
             $stmt->execute([$post_id]);
 
-            echo "Postagem deletada com sucesso!";
+            echo "Postagem deletada com sucesso!"; // Adicione esta linha
         } catch (PDOException $e) {
             echo "Erro ao deletar postagem: " . $e->getMessage();
         }
