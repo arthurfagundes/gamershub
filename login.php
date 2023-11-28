@@ -7,15 +7,17 @@ include './class/CrudUsuario.php';
 $crudUsuario = new CrudUsuario($db);
 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
     $email = $_POST['email'];
     $senha = $_POST['senha'];
-
 
     if ($crudUsuario->logar($email, $senha)) {
         header("Location: home.php");
         exit();
     } else {
+        var_dump("Não loguei");
+        exit;
         echo "Login falhou. Verifique suas credenciais.";
     }
 }

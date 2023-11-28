@@ -133,11 +133,14 @@ include_once('cabecalhohome.php');
                     echo '<img class="postage-image" src="./img/' . $postagem['imagem'] . '" alt="Imagem de Postagem">';
                     echo '</div>';
 
+                    echo"<div class='botoes-post'>";
                     echo '<div class="info">';
                     echo '<form method="post" class="curtir-form">';
                     echo '<input type="hidden" name="post_id" value="' . $post_id . '">';
                     echo '<button type="submit" name="curtir_post">Curtir</button>';
+                    echo "<div class='curtidas'>";
                     echo '<span class="curtidas-count">' . $postagem['curtidas'] . ' curtidas</span>';
+                    echo"</div>";
                     echo '</form>';
                     echo '</div>';
 
@@ -147,6 +150,7 @@ include_once('cabecalhohome.php');
                     echo '<button type="submit" name="deletar_post">Deletar</button>';
                     echo '</form>';
                     echo '</div>';
+                    echo"</div>";
 
                     echo '<div class="comentarios">';
                     echo '<h3>Comentários</h3>';
@@ -170,14 +174,12 @@ include_once('cabecalhohome.php');
                     }
         
                     // Formulário para adicionar comentário
-                    echo"<div class='botoes-post'>";
                     echo '<form method="post" enctype="multipart/form-data">';
                     echo '<input type="hidden" name="post_id" value="' . $post_id . '">';
                     echo '<textarea name="comentario_texto" placeholder="Adicione um comentário"></textarea>';
                     echo '<input type="file" name="comentario_imagem" accept="image/*">';
                     echo '<button type="submit" name="comentar">Comentar</button>';
                     echo '</form>';
-                    echo"</div>";
 
                     // // Adicione o formulário e o botão de apagar
                     // echo '<form method="post" class="deletar-comentario-form" onsubmit="return confirm(\'Tem certeza que deseja deletar este comentário?\');">';

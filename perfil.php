@@ -53,7 +53,6 @@ $postsDoUsuario = $crudPost->listarPostagensPorUsuario($idUsuarioLogado);
 
                     echo '<li>';
                     echo '<div class="profile-info">';
-                    echo '<img class="profile-image" src="' . $usuarioPost['imgperfil'] . '" alt="Imagem do Perfil">';
                     echo '<div class="profile-name">' . $usuarioPost['nome'] . '</div>';
                     echo '</div>';
                     echo '<p>' . $post['texto'] . '</p>';
@@ -75,7 +74,6 @@ $postsDoUsuario = $crudPost->listarPostagensPorUsuario($idUsuarioLogado);
 
                     echo '<li>';
                     echo '<div class="profile-info">';
-                    echo '<img class="profile-image" src="' . $usuarioComentario['imgperfil'] . '" alt="Imagem do Perfil">';
                     echo '<div class="profile-name">' . $usuarioComentario['nome'] . '</div>';
                     echo '</div>';
                     echo '<p>' . $comentario['texto'] . '</p>';
