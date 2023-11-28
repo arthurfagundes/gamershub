@@ -66,25 +66,20 @@
         $comentario_id = $_POST['comentario_id'];
         $crudComentarios->apagarComentario($comentario_id);
 
-        // Redireciona de volta à página principal ou aonde você desejar
         header("Location: ".$_SERVER['PHP_SELF']);
         exit();
     }
 
-    // Ação de comentar
     if (isset($_POST['comentar'])) {
     $comentario_texto = $_POST['comentario_texto'];
     $comentario_imagem = $_FILES['comentario_imagem']['name'];
     $comentario_usuario_id = $idUsuarioLogado;
     $comentario_post_id = $_POST['post_id'];
 
-    // Move o arquivo para o diretório desejado (ajuste o caminho conforme necessário)
     move_uploaded_file($_FILES['comentario_imagem']['tmp_name'], './img/' . $comentario_imagem);
 
-    // Adiciona o comentário usando o método da classe CrudComentarios
     $crudComentarios->criarComentario($comentario_texto, $comentario_usuario_id, $comentario_post_id, $comentario_imagem);
 
-    // Redireciona de volta à página principal ou aonde você desejar
     header("Location: " . $_SERVER['PHP_SELF']);
     exit();
     }
@@ -93,8 +88,8 @@
 include_once('cabecalhohome.php');
 ?>
 
-    <section>
-        <div class="publicar">
+    <section class="publicar">
+        <div class="publicacao">
             <?php
             $usuarioLogado = $crudUsuario->buscarPorId($idUsuarioLogado);
             echo"<div class= 'box-image'>";
@@ -175,12 +170,14 @@ include_once('cabecalhohome.php');
                     }
         
                     // Formulário para adicionar comentário
+                    echo"<div class='botoes-post'>";
                     echo '<form method="post" enctype="multipart/form-data">';
                     echo '<input type="hidden" name="post_id" value="' . $post_id . '">';
                     echo '<textarea name="comentario_texto" placeholder="Adicione um comentário"></textarea>';
                     echo '<input type="file" name="comentario_imagem" accept="image/*">';
                     echo '<button type="submit" name="comentar">Comentar</button>';
                     echo '</form>';
+                    echo"</div>";
 
                     // // Adicione o formulário e o botão de apagar
                     // echo '<form method="post" class="deletar-comentario-form" onsubmit="return confirm(\'Tem certeza que deseja deletar este comentário?\');">';
