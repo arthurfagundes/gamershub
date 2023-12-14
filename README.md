@@ -52,7 +52,7 @@ A aplicação consiste em uma rede social voltada para o público gamer, projeta
 <img src="https://github.com/arthurfagundes/gamershub/assets/64553764/982b11bf-d64f-4e0c-8e53-3e0e28274d68">
 </p>
 
-## Modelo entidade relacionamento
+## Modelo de entidade e relacionamento
 ![Diagrama do DataBase](https://github.com/arthurfagundes/gamershub/assets/64553764/6ad248e6-3a80-4e28-b863-651c4d849811)
 
 # 🖱️ Tecnologias Utilizadas
